@@ -31,4 +31,8 @@ void loop()
     return;
 
   Serial.println("command is -> " + command);
+
+  char charBuf[command.length() + 1];
+  command.toCharArray(charBuf, command.length() + 1);
+  mySerial.write(charBuf);
 }
